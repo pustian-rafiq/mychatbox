@@ -18,20 +18,20 @@
 <body>
 <!--Start Sign Up Form-->
     <div class="signup-form">
-        <form action="" method="">
+        <form action="signup_user.php" method="post">
             <div class="form-header">
                 <h2>Sign Up</h2>
                 <p>Fill out this form and start chatting with yours friends</p>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" class="form-control" placeholder="someone@gmail.com" autocomplete="off" required>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Someone name" autocomplete="off" required>
 
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="someone@gmail.com" autocomplete="off" required>
+                <input type="email" id="email" class="form-control" name="email" placeholder="someone@gmail.com" autocomplete="off" required>
 
             </div>
      
@@ -54,11 +54,11 @@
             <div class="form-group">
                 <label for="user_country">Country</label>
                 <select name="user_country" id="user_country" class="form-control">
-                    <option disabled="">Select Your Country</option>
+                   <!--  <option disabled="">Select Your Country</option> -->
                     <?php 
                     
                     for ($i=0; $i < count($country); $i++) {  ?>
-                            <option value="<?php echo $i; ?>">
+                            <option value="<?php echo $country[$i]; ?>">
 
                             <?php
                             echo $country[$i];
@@ -75,13 +75,13 @@
 
             <div class="form-group">
                 
-                <input type="radio" id="gender" name="gender" required>
+                <input type="radio" id="gender" value="Male" name="gender" required>
                 <label for="male">Male</label>
 
-                <input type="radio" id="female" name="gender" required>
+                <input type="radio" id="female" name="gender" value="Female" required>
                 <label for="female">Female</label>
 
-                <input type="radio" id="others" name="gender" required>
+                <input type="radio" id="others" name="gender" value="Others" required>
                 <label for="others">Others</label>
   
             </div>
@@ -103,7 +103,7 @@
 
             
         </form>
-        <div class="text-center small"  >Don't have an account? <a href="signup.php">Create one</a>
+        <div class="text-center small"  >Don't have an account? <a href="signin.php">Create one</a>
        <!--  style="color: #67428B;" -->
         </div>
 
